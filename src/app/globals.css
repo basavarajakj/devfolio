@@ -1,107 +1,228 @@
+/*--------------------------------*\
+  #style css
+\*--------------------------------*/
+
+/**
+ * copyright 2024 bassu
+ */
+
+
+
+ /*--------------------------------*\
+  #CUSTOM PROPER
+\*--------------------------------*/
+
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  
+  /**
+   * COLORS
+   */
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0);
 
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+  /* light theme */
+  --background-light: hsl(293, 100%, 98%);
+  --on-background-light: hsl(264, 8%, 12%);
+  --surface-light: hsl(293, 100%, 98%);
+  --on-surface-light: hsl(264, 8%, 12%);
+  --on-surface-variant-light: hsl(264, 7%, 29%);
+  --surface-container-low-light: hsl(278, 44%, 96%);
+  --surface-container-light: hsl(276, 38%, 95%);
+  --surface-bright-light: hsl(293, 100%, 98%);
+  --primary-light: hsl(256, 34%, 48%);
+  --on-primary-light: hsl(0, 0%, 100%);
+  --outline-light: hsl(270, 4%, 47%);
+  --outline-variant-light: hsl(270, 11%, 79%);
 
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
 
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+  /* dark color */
+  --background-dark: hsl(260, 14%, 8%);
+  --on-background-dark: hsl(280, 17%, 90%);
+  --surface-dark: hsl(260, 14%, 8%);
+  --on-surface-dark: hsl(280, 17%, 90%);
+  --on-surface-variant-dark: hsl(270, 11%, 79%);
+  --surface-container-low-dark: hsl(264, 8%, 12%);
+  --surface-container-dark: hsl(257, 10%, 14%);
+  --surface-bright-dark: hsl(270, 5%, 23%);
+  --primary-dark: hsl(258, 100%, 87%);
+  --on-primary-dark: hsl(259, 58%, 28%);
+  --outline-dark: hsl(264, 5%, 58%);
+  --outline-variant-dark: hsl(264, 7%, 29%);
+
+  /**
+   * TYPOGRAPHY
+   */
+
+  /* font family */
+  --font-primary: 'Open Sans', sans-serif;
+  --font-secondary: 'Noto Sans', sans-serif;
+
+  /* font size */
+  --base-font-size: 62.5%;
+  --display-large: 5.7rem;
+  --display-medium: 4.5rem;
+  --display-small: 3.6rem;
+  --headline-large: 3.2rem;
+  --headline-medium: 2.8rem;
+  --headline-small: 2.4rem;
+  --title-large: 2rem;
+  --title-medium: 1.6rem;
+  --title-small: 1.4rem;
+  --label-large: 1.4rem;
+  --label-medium: 1.2rem;
+  --label-small: 1.1rem;
+  --body-large: 1.6rem;
+  --body-medium: 1.4rem;
+  --body-small: 1.2rem;
+
+  /* font weight */
+  --weight-regular: 400;
+  --weight-medium: 500;
+
+  /**
+   * BORDER RADIUS
+   */
+  --shape-corner-extra-small: 4px;
+  --shape-corner-small: 8px;
+  --shape-corner-medium: 12px;
+  --shape-corner-large: 16px;
+  --shape-corner-full: 500px;
+  --shape-corner-circle: 50%;
+
+  /**
+   * BOX SHADOW
+   */
+   --elevation-1: 0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004d;
+
+   /**
+    * OTHERS
+    */
+    --section-padding: 24px;
+    --top-bar-height: 64px;
+
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="light"] {
+
+  color-scheme: light;
+
+  --background: var(--background-light);
+  --on-background: var(--on-background-light);
+  --surface: var(--surface-light);
+  --on-surface: var(--on-surface-light);
+  --on-surface-variant: var(--on-surface-variant-light);
+  --surface-container-low: var(--surface-container-low-light);
+  --surface-container: var(--surface-container-light);
+  --surface-bright: var(--surface-bright-light);
+  --primary: var(--primary-light);
+  --on-primary: var(--on-primary-light);
+  --outline: var(--outline-light);
+  --outline-variant: var(--outline-variant-light);
+
+}
+
+
+[data-theme="dark"] {
+
+  color-scheme: dark;
+
+  --background: var(--background-dark);
+  --on-background: var(--on-background-dark);
+  --surface: var(--surface-dark);
+  --on-surface: var(--on-surface-dark);
+  --on-surface-variant: var(--on-surface-variant-dark);
+  --surface-container-low: var(--surface-container-low-dark);
+  --surface-container: var(--surface-container-dark);
+  --surface-bright: var(--surface-bright-dark);
+  --primary: var(--primary-dark);
+  --on-primary: var(--on-primary-dark);
+  --outline: var(--outline-dark);
+  --outline-variant: var(--outline-variant-dark);
+
+}
+
+@media (prefers-reduced-motion: reduce) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
+    /*
+     * TRANSITION
+     */
 
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
+     /* duration */
+     --motion-duration-short-1: 100ms;
 
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+     /* easing */
+     --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
   }
 }
 
-* {
-  box-sizing: border-box;
+
+
+
+/*--------------------------------*\
+  #RESET
+\*--------------------------------*/
+
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+li {list-style: none; }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+a,
+img,
+span,
+input,
+button,
+textarea { display: block; }
 
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+img { height: auto; }
+input,
+button,
+textarea {
+  background: none;
+  border: none;
+  font: inherit;
 }
+
+input,
+textarea { width: 100%; }
+
+button { cursor: pointer; }
+
+textarea { resize: none; }
+
+html {
+  font-size: var(--base-font-size);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--on-background);
+  font-size: var(--body-large);
+}
+
+
+
+
+/*--------------------------------*\
+  #TYPOGRAPHY
+\*--------------------------------*/
+
+
+
+
+/*--------------------------------*\
+  #REUSED STYLES
+\*--------------------------------*/
